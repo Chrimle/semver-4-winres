@@ -4,7 +4,6 @@ version = "0.0.0"
 description = "Parser of SemVer for use with winres."
 
 license = "Apache-2.0"
-license-file = "LICENSE"
 
 readme = "README.md"
 repository = "https://github.com/Chrimle/semver-4-winres"
