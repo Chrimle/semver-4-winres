@@ -1,0 +1,4 @@
+remote_theme: pages-themes/cayman@v0.2.0
+
+title: semver-4-winres
+description: Parser of SemVer for winres.
