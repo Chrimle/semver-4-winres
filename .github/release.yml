@@ -1,0 +1,29 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - meta
+      - doc
+      - test
+
+  categories:
+    - title: Security
+      labels:
+        - security
+
+    - title: New Features
+      labels:
+        - feat
+
+    - title: Bug Fixes
+      labels:
+        - bug
+
+    - title: Dependency Updates
+      labels:
+        - dependencies
+
+    - title: Preview Changes
+      labels:
+        - preview
