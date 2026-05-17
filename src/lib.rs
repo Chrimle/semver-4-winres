@@ -45,17 +45,34 @@ mod tests {
 
     #[test]
     fn test_empty_str_fails() {
-        assert!(parse_to_winres_version_as_result("").is_err());
+        assert!(matches!(
+            parse_to_winres_version_as_result(""),
+            Err(SemVerError::InvalidFormat(_))
+        ));
     }
 
     #[test]
     fn test_invalid_str_fails() {
-        assert!(parse_to_winres_version_as_result("invalid").is_err());
+        assert!(matches!(
+            parse_to_winres_version_as_result("invalid"),
+            Err(SemVerError::InvalidFormat(_))
+        ));
+    }
+
+    #[test]
+    fn test_another_invalid_str_fails() {
+        assert!(matches!(
+            parse_to_winres_version_as_result("another.invalid.string"),
+            Err(SemVerError::InvalidFormat(_))
+        ));
     }
 
     #[test]
     fn test_incomplete_str_fails() {
-        parse_to_winres_version_as_result("1.2").expect_err("Should fail to parse");
+        assert!(matches!(
+            parse_to_winres_version_as_result("1.2."),
+            Err(SemVerError::InvalidFormat(_))
+        ));
     }
 
     #[test]
