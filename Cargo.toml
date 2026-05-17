@@ -5,8 +5,9 @@ description = "Parser of SemVer for use with winres."
 
 license = "Apache-2.0"
 
-readme = "README.md"
+readme = "docs/README.md"
 repository = "https://github.com/Chrimle/semver-4-winres"
+homepage = "https://chrimle.github.io/semver-4-winres/"
 
 authors = [
     "Christopher Molin <28791817+chrimle@users.noreply.github.com>"
@@ -15,6 +16,13 @@ authors = [
 keywords = [
     "semver",
     "winres"
+]
+
+exclude = [
+    ".github/",
+    "docs/",
+    ".gitattributes",
+    ".gitignore"
 ]
 
 edition = "2024"
