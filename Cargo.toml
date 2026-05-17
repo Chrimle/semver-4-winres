@@ -18,7 +18,10 @@ keywords = [
 ]
 
 exclude = [
-    ".github/"
+    ".github/",
+    "docs/",
+    ".gitattributes",
+    ".gitignore"
 ]
 
 edition = "2024"
