@@ -2,7 +2,7 @@ name: Rust Publish
 
 on:
   release:
-    types: [created]
+    types: [ created ]
 
 jobs:
   build:
