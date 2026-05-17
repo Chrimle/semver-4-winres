@@ -4,4 +4,4 @@ version = 4
 
 [[package]]
 name = "semver-4-winres"
-version = "0.0.0"
+version = "0.0.0-alpha"
