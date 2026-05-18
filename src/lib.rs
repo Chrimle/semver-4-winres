@@ -18,9 +18,15 @@ use regex;
 use regex::Regex;
 
 #[derive(Debug)]
+///
+/// Represents a parsing error of a [Semantic Versioning](https://semver.org/) String.
+///
 pub enum SemVerError {
+    /// A _SemVer String_ has an invalid format.
     InvalidFormat(String),
+    /// A _SemVer String_ missing a required sub-version.
     MissingVersion(String),
+    /// A _SemVer String_ has an invalid sub-version.
     InvalidVersion(String),
 }
 
