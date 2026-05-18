@@ -24,3 +24,4 @@ For future reference, whether to understand how this project was created, or how
 - [Rust Manifest Format](https://doc.rust-lang.org/cargo/reference/manifest.html) (`Cargo.toml`)
 - [Building & Testing Rust](https://docs.github.com/en/actions/tutorials/build-and-test-code/rust) (`.github/workflows/rust.yml`)
 - [Publishing on crates.io](https://doc.rust-lang.org/cargo/reference/publishing.html) (`.github/workflows/rust-publish.yml`)
+- [Trusted Publishing](https://blog.rust-lang.org/2025/07/11/crates-io-development-update-2025-07/) (`.github/workflows/rust-publish.yml`)
