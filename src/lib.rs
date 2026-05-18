@@ -30,6 +30,21 @@ pub enum SemVerError {
     InvalidVersion(String),
 }
 
+///
+/// Parses a [SemVer](https://semver.org/) -string into the equivalent [winres](https://crates.io/crates/semver-4-winres)-compatible `u64`-value.
+///
+/// # Arguments
+///
+/// * `semver_str`: _SemVer_-string to be parsed and converted. **MUST** match the RegEx: `^\d+\.\d+\.\d+$`.
+///
+/// returns: `Result<u64, SemVerError>` the parsed _SemVer_-string converted to the _winres_-equivalent `u64`, if successful. Otherwise, a [`SemVerError`](SemVerError) is returned.
+///
+/// # Examples
+///
+/// ```
+/// let winres_version: u64 = parse_to_winres_version("1.2.3").unwrap();
+/// assert_eq!(winres_version, 281483566841856);
+/// ```
 pub fn parse_to_winres_version(semver_str: &str) -> Result<u64, SemVerError> {
     let semver_regex: Regex =
         Regex::new("^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$").unwrap();
