@@ -28,3 +28,4 @@ exclude = [
 edition = "2024"
 
 [dependencies]
+regex = "1.12.3"
