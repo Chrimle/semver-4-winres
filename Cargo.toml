@@ -1,6 +1,6 @@
 [package]
 name = "semver-4-winres"
-version = "0.0.0-alpha"
+version = "0.1.0"
 description = "Parser of SemVer for use with winres."
 
 license = "Apache-2.0"
