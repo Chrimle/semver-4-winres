@@ -30,3 +30,6 @@ edition = "2024"
 
 [dependencies]
 regex = "1.12.3"
+
+[dev-dependencies]
+test-case = "3.3.1"
