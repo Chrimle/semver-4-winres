@@ -8,7 +8,7 @@ pub enum SemVerError {
     InvalidVersion(String),
 }
 
-pub fn parse_to_winres_version_as_result(semver_str: &str) -> Result<u64, SemVerError> {
+pub fn parse_to_winres_version(semver_str: &str) -> Result<u64, SemVerError> {
     let semver_regex: Regex =
         Regex::new("^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$").unwrap();
 
@@ -49,7 +49,7 @@ mod tests {
     #[test]
     fn test_empty_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result(""),
+            parse_to_winres_version(""),
             Err(SemVerError::InvalidFormat(_))
         ));
     }
@@ -57,7 +57,7 @@ mod tests {
     #[test]
     fn test_invalid_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("invalid"),
+            parse_to_winres_version("invalid"),
             Err(SemVerError::InvalidFormat(_))
         ));
     }
@@ -65,7 +65,7 @@ mod tests {
     #[test]
     fn test_another_invalid_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("another.invalid.string"),
+            parse_to_winres_version("another.invalid.string"),
             Err(SemVerError::InvalidFormat(_))
         ));
     }
@@ -73,25 +73,25 @@ mod tests {
     #[test]
     fn test_incomplete_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("1.2."),
+            parse_to_winres_version("1.2."),
             Err(SemVerError::InvalidFormat(_))
         ));
     }
 
     #[test]
     fn test_valid_str_passes() {
-        assert_eq!(281483566841856, parse_to_winres_version_as_result("1.2.3").unwrap());
+        assert_eq!(281483566841856, parse_to_winres_version("1.2.3").unwrap());
     }
 
     #[test]
     fn test_maximum_valid_str_passes() {
-        assert_eq!(18446744073709486080, parse_to_winres_version_as_result("65535.65535.65535").unwrap());
+        assert_eq!(18446744073709486080, parse_to_winres_version("65535.65535.65535").unwrap());
     }
 
     #[test]
     fn test_u16_patch_overflow_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("0.0.65536"),
+            parse_to_winres_version("0.0.65536"),
             Err(SemVerError::InvalidVersion(_))
         ));
     }
@@ -99,7 +99,7 @@ mod tests {
     #[test]
     fn test_u16_minor_overflow_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("0.65536.0"),
+            parse_to_winres_version("0.65536.0"),
             Err(SemVerError::InvalidVersion(_))
         ));
     }
@@ -107,7 +107,7 @@ mod tests {
     #[test]
     fn test_u16_major_overflow_str_fails() {
         assert!(matches!(
-            parse_to_winres_version_as_result("65536.0.0"),
+            parse_to_winres_version("65536.0.0"),
             Err(SemVerError::InvalidVersion(_))
         ));
     }
