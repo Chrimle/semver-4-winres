@@ -42,6 +42,8 @@ pub enum SemVerError {
 /// # Examples
 ///
 /// ```
+/// use semver_4_winres::parse_to_winres_version;
+///
 /// let winres_version: u64 = parse_to_winres_version("1.2.3").unwrap();
 /// assert_eq!(winres_version, 281483566841856);
 /// ```
