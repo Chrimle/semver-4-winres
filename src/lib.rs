@@ -57,22 +57,22 @@ pub fn parse_to_winres_version(semver_str: &str) -> Result<u64, SemVerError> {
 
     let _major: u16 = captures
         .name("major")
+        .map(|m| m.as_str())
         .ok_or_else(|| SemVerError::MissingVersion("major".to_string()))?
-        .as_str()
         .parse::<u16>()
         .map_err(|_| SemVerError::InvalidVersion("major".to_string()))?;
 
     let _minor: u16 = captures
         .name("minor")
+        .map(|m| m.as_str())
         .ok_or_else(|| SemVerError::MissingVersion("minor".to_string()))?
-        .as_str()
         .parse::<u16>()
         .map_err(|_| SemVerError::InvalidVersion("minor".to_string()))?;
 
     let _patch: u16 = captures
         .name("patch")
+        .map(|m| m.as_str())
         .ok_or_else(|| SemVerError::MissingVersion("patch".to_string()))?
-        .as_str()
         .parse::<u16>()
         .map_err(|_| SemVerError::InvalidVersion("patch".to_string()))?;
 
