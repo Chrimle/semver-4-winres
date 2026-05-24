@@ -5,6 +5,7 @@ changelog:
     labels:
       - meta
       - doc
+      - refactor
       - test
 
   categories:
