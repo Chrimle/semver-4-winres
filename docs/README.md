@@ -14,7 +14,7 @@ Parser of [SemVer](https://semver.org/), for use with [winres](https://crates.io
 > Example:
 > ```toml
 > [build-dependencies]
-> semver-4-winres = "0.0.0" # Check for latest released version
+> semver-4-winres = "0.1.1" # Check for latest released version
 > ```
 
 ### External References
