@@ -1,5 +1,7 @@
 name: Rust
 
+permissions: { }
+
 on:
   push:
     branches: [ "main" ]
@@ -13,6 +15,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v6
