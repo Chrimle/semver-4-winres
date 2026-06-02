@@ -1,5 +1,7 @@
 name: Rust Publish
 
+permissions: { }
+
 on:
   release:
     types: [ created ]
