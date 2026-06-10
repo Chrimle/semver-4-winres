@@ -29,7 +29,7 @@ exclude = [
 edition = "2024"
 
 [dependencies]
-regex = "1.12.3"
+regex = "1.12.4"
 
 [dev-dependencies]
 test-case = "3.3.1"
